@@ -39,7 +39,12 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceProcessException;
 import org.apache.uima.util.ProcessTrace;
 
+/**
+ * @author Haohan Wang
+ *This class is modified from the original UIMA template class, used for reading the sentences
+ */
 public class AnnotationPrinter extends CasConsumer_ImplBase implements CasObjectProcessor {
+  
   File outFile;
 
   FileWriter fileWriter;

@@ -37,6 +37,10 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Progress;
 import org.apache.uima.util.ProgressImpl;
 
+/**
+ * @author Haohan Wang
+ * This class is modified from the original UIMA template class, used for write the line ID, offset and the word. 
+ */
 public class FileSystemCollectionReader extends CollectionReader_ImplBase {
 
   public static final String PARAM_INPUTDIR = "InputDirectory";

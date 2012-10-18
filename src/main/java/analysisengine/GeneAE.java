@@ -35,6 +35,12 @@ import com.aliasi.chunk.Chunk;
 import com.aliasi.chunk.ConfidenceChunker;
 import com.aliasi.util.AbstractExternalizable;
 
+/**
+ * @author Haohan Wang
+ *  This is the part of analysis engine, get the sentence form reader and process it to extract the lineID
+ *  and get the entity offset. 
+ *  The offset is with space and processed later.  
+ */
 public class GeneAE extends JCasAnnotator_ImplBase {
 
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
@@ -67,7 +73,7 @@ public class GeneAE extends JCasAnnotator_ImplBase {
       confidence = Math.pow(2.0, c.score());
       type annotation = new type(aJCas);
       // only generate the words with the confidence greater than the threshold, i.e. 0.6
-      if (confidence > 0.7) {
+      if (confidence > 0.65) {
         annotation.setGeneDoc(Str);
         annotation.setLineID(line);
         annotation.setStartOffSet(c.start());
