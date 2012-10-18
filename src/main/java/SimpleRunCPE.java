@@ -36,6 +36,10 @@ import org.apache.uima.util.XMLInputSource;
  * 
  * 
  */
+/**
+ * @author Haohan Wang
+ * This is the UIMA exmample of SimpleRunCPE
+ */
 public class SimpleRunCPE extends Thread {
   /**
    * The CPE instance.

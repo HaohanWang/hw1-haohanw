@@ -73,7 +73,7 @@ public class GeneAE extends JCasAnnotator_ImplBase {
       confidence = Math.pow(2.0, c.score());
       type annotation = new type(aJCas);
       // only generate the words with the confidence greater than the threshold, i.e. 0.6
-      if (confidence > 0.65) {
+      if (confidence > 0.6) {
         annotation.setGeneDoc(Str);
         annotation.setLineID(line);
         annotation.setStartOffSet(c.start());
