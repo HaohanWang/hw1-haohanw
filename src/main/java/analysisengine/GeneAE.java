@@ -23,6 +23,7 @@ package analysisengine;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Iterator;
 
 import genemention.type;
@@ -54,11 +55,12 @@ public class GeneAE extends JCasAnnotator_ImplBase {
 
     Str = Str.substring(15, Str.length());// extrate the file part
     cha = Str.toCharArray();
+    InputStream in = this.getClass().getResourceAsStream("ne-en-bio-genetag.HmmChunker");
     try {
       // from lingpipe
       // import the trained data, biogenetag data
       chunker = (ConfidenceChunker) AbstractExternalizable.readObject(new File(
-              "./src/main/resources/ne-en-bio-genetag.HmmChunker"));
+              "ne-en-bio-genetag.HmmChunker"));
     } catch (IOException e) {
       e.printStackTrace();
     } catch (ClassNotFoundException e) {
