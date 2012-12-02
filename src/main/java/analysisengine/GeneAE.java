@@ -24,6 +24,7 @@ package analysisengine;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.Iterator;
 
 import genemention.type;
@@ -55,7 +56,9 @@ public class GeneAE extends JCasAnnotator_ImplBase {
 
     Str = Str.substring(15, Str.length());// extrate the file part
     cha = Str.toCharArray();
-    InputStream in = this.getClass().getResourceAsStream("ne-en-bio-genetag.HmmChunker");
+    URL base = ClassLoader.getSystemClassLoader().getResource("");
+    File modelFile = new File(base+"\ne-en-bio-genetag.HmmChunker");
+    InputStream in = this.getClass().getResourceAsStream(modelFile.toString());
     try {
       // from lingpipe
       // import the trained data, biogenetag data
